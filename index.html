@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maheswara Reddy Golamaru — Software Engineer & AI/ML Portfolio</title>
+<title>Maheswara Reddy Golamaru — Senior Software Engineer & AI/ML Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper: #f6f7f9;
@@ -23,20 +23,13 @@
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    line-height:1.6;
-  }
-  a{color:inherit;}
-  .wrap{ max-width:960px; margin:0 auto; padding:0 6vw; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.6; }
+  a{ color:inherit; }
+  svg.icon{ width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.8; }
 
-  /* NAV */
   nav{
     display:flex; justify-content:space-between; align-items:center;
-    padding:1.6rem 6vw; position:sticky; top:0; background:rgba(246,247,249,0.9);
+    padding:1.5rem 6vw; position:sticky; top:0; background:rgba(246,247,249,0.92);
     backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid var(--line);
   }
   nav .brand{ font-family:var(--display); font-weight:700; font-size:1.05rem; }
@@ -44,112 +37,91 @@
   nav .links a{ text-decoration:none; color:var(--ink-soft); }
   nav .links a:hover{ color:var(--ink); }
 
-  /* HERO */
-  .hero{ padding:7vh 6vw 5vh 6vw; max-width:960px; margin:0 auto; }
-  .hero .eyebrow{
-    font-family:var(--mono); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase;
-    color:var(--steel); margin-bottom:1rem;
+  .hero{ padding:7vh 6vw 4vh 6vw; max-width:980px; margin:0 auto; position:relative; }
+  .hero-top{ display:flex; gap:2.4rem; align-items:center; flex-wrap:wrap; }
+  .avatar{
+    width:96px; height:96px; border-radius:22px; flex-shrink:0;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--amber) 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:700; font-size:2rem; color:#fff;
   }
-  .hero h1{
-    font-family:var(--display); font-size:clamp(2.2rem,5vw,3.4rem); font-weight:700;
-    line-height:1.12; margin:0 0 1rem 0;
-  }
-  .hero p.lede{ font-size:1.1rem; color:var(--ink-soft); max-width:60ch; margin:0 0 2rem 0; }
+  .hero .eyebrow{ font-family:var(--mono); font-size:.75rem; letter-spacing:.1em; text-transform:uppercase; color:var(--steel); margin-bottom:.7rem; }
+  .hero h1{ font-family:var(--display); font-size:clamp(2rem,4.6vw,3rem); font-weight:700; line-height:1.15; margin:0 0 .5rem 0; }
+  .hero .subtitle{ font-size:1.05rem; color:var(--ink-soft); font-weight:500; }
+  .hero p.lede{ font-size:1.05rem; color:var(--ink-soft); max-width:66ch; margin:1.6rem 0 0 0; }
 
-  /* Signature spectrum bar */
-  .spectrum{ margin: 2rem 0 1rem 0; }
-  .spectrum-bar{
-    height:10px; border-radius:100px;
-    background: linear-gradient(90deg, var(--steel) 0%, var(--steel) 38%, var(--amber) 100%);
-    position:relative;
-  }
-  .spectrum-labels{
-    display:flex; justify-content:space-between; font-family:var(--mono);
-    font-size:.72rem; color:var(--ink-soft); margin-top:.6rem;
-  }
-  .spectrum-labels .mid{ position:absolute; left:38%; transform:translateX(-50%); text-align:center; }
-  .spectrum-wrap{ position:relative; }
+  .spectrum-wrap{ position:relative; margin: 2rem 0 0 0; }
+  .spectrum-bar{ height:10px; border-radius:100px; background: linear-gradient(90deg, var(--steel) 0%, var(--steel) 34%, var(--amber) 100%); }
+  .spectrum-labels{ display:flex; justify-content:space-between; font-family:var(--mono); font-size:.7rem; color:var(--ink-soft); margin-top:.6rem; }
 
   .cta-row{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
-  .btn{
-    font-family:var(--body); font-weight:600; font-size:.9rem;
-    padding:.75rem 1.4rem; border-radius:8px; text-decoration:none; display:inline-block;
-    border:1px solid var(--line);
-  }
+  .btn{ font-family:var(--body); font-weight:600; font-size:.9rem; padding:.75rem 1.4rem; border-radius:8px; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; border:1px solid var(--line); }
   .btn.primary{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
   .btn.ghost{ background:transparent; color:var(--ink); }
 
-  /* SECTION generic */
-  section{ padding:5vh 6vw; max-width:960px; margin:0 auto; }
-  .section-head{
-    font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
-    color:var(--ink-soft); margin-bottom:1.2rem; display:flex; align-items:center; gap:.7rem;
-  }
-  .section-head::after{ content:""; flex:1; height:1px; background:var(--line); }
-  h2.title{ font-family:var(--display); font-size:1.7rem; font-weight:700; margin:0 0 1.2rem 0; }
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:3rem; }
+  .stat{ background:var(--card); padding:1.4rem 1rem; text-align:center; }
+  .stat .num{ font-family:var(--display); font-size:1.6rem; font-weight:700; color:var(--steel); }
+  .stat .lbl{ font-family:var(--mono); font-size:.68rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em; margin-top:.3rem; }
 
-  /* BIO */
-  #bio p{ max-width:70ch; color:var(--ink-soft); margin-bottom:1rem; }
+  section{ padding:5vh 6vw; max-width:980px; margin:0 auto; }
+  .section-head{ display:flex; align-items:center; gap:.6rem; font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:1.2rem; }
+  .section-head::after{ content:""; flex:1; height:1px; background:var(--line); margin-left:.6rem; }
+  .section-head svg{ color:var(--amber); }
+  h2.title{ font-family:var(--display); font-size:1.7rem; font-weight:700; margin:0 0 1.4rem 0; }
 
-  /* VALUE PROP callout */
-  .vp-card{
-    background:var(--card); border:1px solid var(--line); border-left:4px solid var(--amber);
-    border-radius:10px; padding:2rem; margin-top:1rem;
-  }
-  .vp-card p{ font-family:var(--display); font-size:1.2rem; font-weight:600; line-height:1.5; margin:0; }
+  #bio p{ max-width:72ch; color:var(--ink-soft); margin-bottom:1rem; }
 
-  /* EXPERTISE */
-  .expertise-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.4rem; margin-top:1rem; }
-  .expertise-cat h3{
-    font-family:var(--body); font-size:.85rem; font-weight:600; margin:0 0 .7rem 0; color:var(--ink);
-  }
+  .achieve-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:1rem; }
+  .achieve-card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.6rem; }
+  .achieve-card .tag{ font-family:var(--mono); font-size:.68rem; color:var(--amber); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.6rem; display:block; }
+  .achieve-card h3{ font-family:var(--display); font-size:1.05rem; margin:0 0 .5rem 0; }
+  .achieve-card p{ color:var(--ink-soft); font-size:.9rem; margin:0; }
+
+  .vp-card{ background:var(--card); border:1px solid var(--line); border-left:4px solid var(--amber); border-radius:10px; padding:2rem; margin-top:1rem; }
+  .vp-card p{ font-family:var(--display); font-size:1.15rem; font-weight:600; line-height:1.55; margin:0; }
+
+  .expertise-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.4rem; margin-top:1rem; }
+  .expertise-cat h3{ font-family:var(--body); font-size:.85rem; font-weight:600; margin:0 0 .7rem 0; }
   .tags{ display:flex; flex-wrap:wrap; gap:.4rem; }
-  .tag{
-    font-family:var(--mono); font-size:.72rem; padding:.3rem .65rem; border-radius:100px;
-    background:var(--steel-soft); color:var(--steel); border:1px solid transparent;
-  }
+  .tag{ font-family:var(--mono); font-size:.7rem; padding:.3rem .6rem; border-radius:100px; background:var(--steel-soft); color:var(--steel); }
   .expertise-cat.ai .tag{ background:var(--amber-soft); color:var(--amber); }
 
-  /* ARTIFACT */
-  .artifact-card{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:2.2rem; margin-top:1rem;
-  }
-  .artifact-card .art-eyebrow{
-    font-family:var(--mono); font-size:.72rem; color:var(--amber); text-transform:uppercase; letter-spacing:.08em;
-    margin-bottom:.6rem;
-  }
+  .timeline{ position:relative; margin-top:1rem; padding-left:1.6rem; border-left:2px solid var(--line); }
+  .tl-item{ position:relative; padding-bottom:2.2rem; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{ content:""; position:absolute; left:-1.85rem; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--amber); border:3px solid var(--paper); }
+  .tl-role{ font-family:var(--display); font-size:1.1rem; font-weight:700; margin:0; }
+  .tl-meta{ font-family:var(--mono); font-size:.75rem; color:var(--steel); margin:.2rem 0 .8rem 0; }
+  .tl-item ul{ margin:0; padding-left:1.2rem; color:var(--ink-soft); font-size:.92rem; }
+  .tl-item li{ margin-bottom:.45rem; }
+
+  .edu-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.2rem; margin-top:1rem; }
+  .edu-card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.6rem; }
+  .edu-card h3{ font-family:var(--display); font-size:1.05rem; margin:0 0 .3rem 0; }
+  .edu-card .meta{ font-family:var(--mono); font-size:.75rem; color:var(--steel); }
+
+  .artifact-card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:2.2rem; margin-top:1rem; }
+  .artifact-card .art-eyebrow{ font-family:var(--mono); font-size:.72rem; color:var(--amber); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.6rem; }
   .artifact-card h3{ font-family:var(--display); font-size:1.5rem; margin:0 0 .8rem 0; }
   .artifact-card .intro{ color:var(--ink-soft); margin-bottom:1.4rem; }
   .field{ margin-bottom:1.3rem; }
-  .field .label{
-    font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--steel); margin-bottom:.4rem; display:block;
-  }
+  .field .label{ font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--steel); margin-bottom:.4rem; display:block; }
   .field p, .field ol{ margin:0; color:var(--ink-soft); }
   .field ol{ padding-left:1.2rem; }
   .field ol li{ margin-bottom:.4rem; }
   .tools-row{ display:flex; flex-wrap:wrap; gap:.4rem; }
-  .vp-inline{
-    background:var(--amber-soft); border-radius:8px; padding:1rem 1.2rem; color:#7a4d24;
-    font-size:.95rem;
-  }
+  .vp-inline{ background:var(--amber-soft); border-radius:8px; padding:1rem 1.2rem; color:#7a4d24; font-size:.95rem; }
   .artifact-links{ display:flex; gap:1rem; margin-top:1.6rem; flex-wrap:wrap; }
 
-  /* CONTACT */
   #contact{ padding-bottom:10vh; }
   .contact-row{ display:flex; gap:1.6rem; flex-wrap:wrap; margin-top:1rem; }
-  .contact-row a{
-    text-decoration:none; font-weight:600; font-size:.92rem; padding-bottom:2px;
-    border-bottom:2px solid var(--amber);
-  }
-  footer{
-    text-align:center; padding:3rem 6vw; color:var(--ink-soft); font-size:.8rem;
-    border-top:1px solid var(--line);
-  }
+  .contact-row a{ text-decoration:none; font-weight:600; font-size:.92rem; padding-bottom:2px; border-bottom:2px solid var(--amber); display:inline-flex; align-items:center; gap:.4rem; }
+  footer{ text-align:center; padding:3rem 6vw; color:var(--ink-soft); font-size:.8rem; border-top:1px solid var(--line); }
 
   @media (max-width: 640px){
     nav .links{ display:none; }
+    .stats{ grid-template-columns:repeat(2,1fr); }
   }
 </style>
 </head>
@@ -160,23 +132,29 @@
   <div class="links">
     <a href="#bio">Bio</a>
     <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
     <a href="#artifacts">Artifacts</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="eyebrow">AI/ML Professional Portfolio</div>
-  <h1>Software engineer bridging enterprise Java and applied AI/ML.</h1>
-  <p class="lede">Eight-plus years building production Java and Spring Boot systems, now designing GenAI features with LangChain, RAG pipelines, and cloud LLM infrastructure. This portfolio tracks that transition, one working artifact at a time.</p>
+  <div class="hero-top">
+    <div class="avatar">MG</div>
+    <div>
+      <div class="eyebrow">AI/ML Professional Portfolio</div>
+      <h1>Maheswara Reddy Golamaru</h1>
+      <div class="subtitle">Senior Software Engineer · Full-Stack &amp; AI/ML · Agentic GenAI, LLM &amp; RAG · AWS &amp; Azure</div>
+    </div>
+  </div>
+
+  <p class="lede">7+ years designing and delivering scalable, high-performance enterprise applications with Java, Spring Boot, and microservices, now extending that foundation into agentic GenAI systems, RAG pipelines, and production LLM integrations across AWS and Azure.</p>
 
   <div class="spectrum-wrap">
-    <div class="spectrum">
-      <div class="spectrum-bar"></div>
-      <div class="spectrum-labels">
-        <span>Enterprise Java · Spring Boot · Microservices</span>
-        <span>Applied GenAI · LangChain · RAG · Cloud ML</span>
-      </div>
+    <div class="spectrum-bar"></div>
+    <div class="spectrum-labels">
+      <span>Enterprise Java · Spring Boot · Microservices</span>
+      <span>Agentic GenAI · LangChain · RAG · LLMOps</span>
     </div>
   </div>
 
@@ -184,69 +162,183 @@
     <a class="btn primary" href="#artifacts">View featured artifact</a>
     <a class="btn ghost" href="#contact">Get in touch</a>
   </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">7+</div><div class="lbl">Years Experience</div></div>
+    <div class="stat"><div class="num">60%</div><div class="lbl">Manual Effort Cut via AI</div></div>
+    <div class="stat"><div class="num">99.9%</div><div class="lbl">Production SLA Sustained</div></div>
+    <div class="stat"><div class="num">39K+</div><div class="lbl">Enterprise Clients Served</div></div>
+  </div>
 </div>
 
 <section id="bio">
-  <div class="section-head">Professional Bio</div>
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/><circle cx="12" cy="8" r="4"/></svg>
+    Professional Bio
+  </div>
   <h2 class="title">Where I've built, and where I'm headed</h2>
-  <p>I'm a senior software engineer with a core background in Java, Spring Boot, microservices, and REST APIs, built over 8+ years across enterprise environments including Paycom and TCS. That work centered on scalable backend systems, cloud infrastructure on AWS and Azure, and the kind of production discipline that comes from shipping code other teams depend on.</p>
-  <p>Over the past year, I've extended that foundation into applied AI/ML: graduate coursework in machine learning fundamentals and data analytics, hands-on work with LangChain and LangGraph for agentic workflows, retrieval-augmented generation pipelines, and cloud-based LLM infrastructure through AWS Bedrock and SageMaker. I'm now focused on roles where enterprise engineering rigor and applied GenAI capability meet, building AI features that are genuinely useful and built to hold up in production.</p>
+  <p>I'm a Senior Software Engineer with 7+ years of experience designing and delivering scalable, high-performance enterprise applications using Java, Spring Boot, and microservices architecture, with full-stack depth across React, TypeScript, and cloud-native systems on AWS and Azure.</p>
+  <p>At Paycom, I led the development of an AI-powered chatbot that cut manual effort by 60% while holding 99.9% uptime for 39,000+ enterprise clients, and built the RAG pipelines, multi-agent workflows, and LLMOps observability stack behind it using LangChain, LangGraph, Amazon Bedrock, and Anthropic Claude and OpenAI models in production. I hold an MS in Computer Science from the University of North Texas, and I'm now focused on roles where enterprise engineering discipline and applied GenAI capability meet.</p>
+
+  <div class="achieve-grid">
+    <div class="achieve-card">
+      <span class="tag">Foundation</span>
+      <h3>7+ Years of Enterprise Java</h3>
+      <p>Built and scaled Spring Boot microservices, REST and GraphQL APIs, and distributed systems processing millions of transactions monthly across payroll and telecom platforms.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="tag">Turning Point</span>
+      <h3>Leading GenAI Integration at Paycom</h3>
+      <p>Owned the end-to-end ML lifecycle for GenAI features in production: RAG pipelines, multi-agent workflows, and LLMOps observability, sustaining enterprise-grade SLAs.</p>
+    </div>
+    <div class="achieve-card">
+      <span class="tag">Now</span>
+      <h3>MS in Computer Science, UNT</h3>
+      <p>Formalizing my AI/ML foundation through graduate study while continuing hands-on GenAI engineering work, aimed at hybrid Java/AI engineering roles.</p>
+    </div>
+  </div>
 </section>
 
 <section id="value-prop">
-  <div class="section-head">Personal Value Proposition</div>
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+    Personal Value Proposition
+  </div>
   <h2 class="title">What I bring to a team</h2>
   <div class="vp-card">
-    <p>I help engineering teams bridge dependable enterprise systems with practical generative AI, pairing 8+ years of production Java and Spring Boot experience with hands-on GenAI development in LangChain, RAG, and cloud LLM infrastructure to ship AI features that are both innovative and production-ready.</p>
+    <p>I help engineering teams bridge dependable enterprise systems with practical generative AI, pairing 7+ years of production Java and Spring Boot experience with hands-on GenAI engineering, agentic workflows, RAG pipelines, and LLMOps, to ship AI features that are both innovative and built to hold up at enterprise scale.</p>
   </div>
 </section>
 
 <section id="expertise">
-  <div class="section-head">Technical Expertise</div>
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
+    Technical Expertise
+  </div>
   <h2 class="title">The stack I work across</h2>
   <div class="expertise-grid">
+    <div class="expertise-cat">
+      <h3>Languages</h3>
+      <div class="tags">
+        <span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL / PL/SQL / T-SQL</span>
+        <span class="tag">JavaScript</span><span class="tag">Unix Shell</span>
+      </div>
+    </div>
+    <div class="expertise-cat">
+      <h3>Frontend</h3>
+      <div class="tags">
+        <span class="tag">React 18</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+        <span class="tag">Angular</span><span class="tag">Redux</span>
+      </div>
+    </div>
     <div class="expertise-cat">
       <h3>Backend &amp; APIs</h3>
       <div class="tags">
         <span class="tag">Spring Boot</span><span class="tag">Spring Security</span>
-        <span class="tag">REST APIs</span><span class="tag">GraphQL</span>
-        <span class="tag">OAuth 2.0 / JWT</span><span class="tag">Java EE</span>
+        <span class="tag">REST / GraphQL</span><span class="tag">OAuth 2.0 / JWT</span>
       </div>
     </div>
     <div class="expertise-cat ai">
-      <h3>ML &amp; GenAI</h3>
+      <h3>GenAI &amp; LLMs</h3>
       <div class="tags">
-        <span class="tag">LangChain</span><span class="tag">LangGraph</span>
-        <span class="tag">RAG Pipelines</span><span class="tag">PyTorch</span>
-        <span class="tag">scikit-learn</span>
+        <span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">LlamaIndex</span>
+        <span class="tag">RAG Pipelines</span><span class="tag">Multi-Agent Systems</span>
+        <span class="tag">Claude 3 / GPT-4o</span><span class="tag">Amazon Bedrock</span>
+      </div>
+    </div>
+    <div class="expertise-cat ai">
+      <h3>ML Frameworks &amp; MLOps</h3>
+      <div class="tags">
+        <span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span>
+        <span class="tag">MLflow</span><span class="tag">Langfuse</span><span class="tag">Evidently AI</span>
       </div>
     </div>
     <div class="expertise-cat">
       <h3>Cloud &amp; DevOps</h3>
       <div class="tags">
-        <span class="tag">AWS (EC2, EKS, Lambda)</span><span class="tag">Azure</span>
-        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span>
-      </div>
-    </div>
-    <div class="expertise-cat ai">
-      <h3>MLOps &amp; Cloud AI</h3>
-      <div class="tags">
-        <span class="tag">AWS Bedrock</span><span class="tag">SageMaker</span>
-        <span class="tag">MLflow</span><span class="tag">Langfuse</span>
+        <span class="tag">AWS (SageMaker, EKS, Lambda)</span><span class="tag">Azure</span>
+        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">ArgoCD</span>
       </div>
     </div>
     <div class="expertise-cat">
       <h3>Data &amp; Storage</h3>
       <div class="tags">
-        <span class="tag">PostgreSQL</span><span class="tag">Redis</span>
-        <span class="tag">Kafka</span><span class="tag">Spark</span>
+        <span class="tag">PostgreSQL / pgvector</span><span class="tag">Redis</span>
+        <span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">DynamoDB</span>
       </div>
     </div>
   </div>
 </section>
 
+<section id="experience">
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+    Professional Experience
+  </div>
+  <h2 class="title">Where I've worked</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <p class="tl-role">Software Developer IV — Java Full-Stack AI/ML</p>
+      <p class="tl-meta">Paycom Payroll LLC · Irving, TX · Sep 2024 – Feb 2026</p>
+      <ul>
+        <li>Built Java orchestration layers integrating LLM services (OpenAI, Claude) with backend payroll systems.</li>
+        <li>Designed RAG pipelines using LangChain, LangGraph, Amazon Bedrock, and pgvector, improving LLM answer accuracy by 35%.</li>
+        <li>Built stateful multi-agent workflows automating payroll rule validation, cutting manual effort by 60%.</li>
+        <li>Integrated Claude 3 and GPT-4o into Spring microservices with circuit breakers and streaming, sustaining 99.9% SLA for 39K+ clients.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <p class="tl-role">Software Developer III — Java Full-Stack</p>
+      <p class="tl-meta">Paycom Payroll LLC · Irving, TX · Jul 2023 – Aug 2024</p>
+      <ul>
+        <li>Delivered payroll microservices processing 5M+ employee records monthly at 99.95% availability.</li>
+        <li>Architected full-stack modernization of the Benefits Open Enrollment platform, cutting page load time by 45%.</li>
+        <li>Applied Redis caching and connection pooling, achieving sub-200ms p95 response time under peak load.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <p class="tl-role">System Engineer — Java Full-Stack</p>
+      <p class="tl-meta">Tata Consultancy Services · Client: Vodafone UK/Europe · Jun 2020 – Aug 2021</p>
+      <ul>
+        <li>Designed Spring Boot microservices for a telecom billing platform processing 500K+ daily transactions.</li>
+        <li>Built event-driven architecture using Apache Kafka, improving throughput by 40%.</li>
+        <li>Cut release cycle time from 2 weeks to 3 days via Azure DevOps CI/CD pipelines.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <p class="tl-role">Assistant System Engineer — Java Full-Stack</p>
+      <p class="tl-meta">Tata Consultancy Services · Client: Vodafone UK/Europe · Jun 2018 – May 2020</p>
+      <ul>
+        <li>Maintained Java Spring MVC modules for telecom CRM workflows supporting 200K+ active subscribers.</li>
+        <li>Reduced slow-query count by 60% through Oracle SQL optimization and composite indexing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+    Education
+  </div>
+  <h2 class="title">Academic background</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <h3>MS, Computer Science</h3>
+      <div class="meta">University of North Texas, Denton, TX · 2021 – 2023</div>
+    </div>
+    <div class="edu-card">
+      <h3>BS, Computer Science</h3>
+      <div class="meta">Andhra University, Visakhapatnam, India · 2014 – 2018</div>
+    </div>
+  </div>
+</section>
+
 <section id="artifacts">
-  <div class="section-head">Featured Artifact 01</div>
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    Featured Artifact 01
+  </div>
   <h2 class="title">AI Lab: Career Prep Assistant</h2>
 
   <div class="artifact-card">
@@ -310,13 +402,16 @@
 </section>
 
 <section id="contact">
-  <div class="section-head">Contact</div>
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    Contact
+  </div>
   <h2 class="title">Let's connect</h2>
-  <p style="color:var(--ink-soft); max-width:60ch;">Open to Java Full Stack and AI/ML Engineering roles that combine production backend experience with applied GenAI work.</p>
+  <p style="color:var(--ink-soft); max-width:60ch;">Open to Senior Software Engineer and AI/ML Engineering roles that combine production Java backend experience with applied GenAI, agentic systems, and LLMOps work.</p>
   <div class="contact-row">
-    <a href="mailto:golamarumaheswar@gmail.com.com">Email</a>
-    <a href="https://www.linkedin.com/in/maheswar1908/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/golamarumaheswarareddy/golamarumaheswarareddy" target="_blank" rel="noopener">GitHub</a>
+    <a href="mailto:golamarumaheswar@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/maheswar1908" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/golamarumaheswarareddy" target="_blank" rel="noopener">GitHub</a>
   </div>
 </section>
 
