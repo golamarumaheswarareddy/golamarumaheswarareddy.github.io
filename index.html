@@ -530,6 +530,69 @@
   </div>
 </section>
 
+<section id="artifacts-4">
+  <div class="section-head">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M4 21V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v12"/><path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg>
+    Featured Artifact 04
+  </div>
+  <h2 class="title">AI-Guided Data Challenge Scenarios</h2>
+
+  <div class="artifact-card">
+    <div class="art-eyebrow">AIML-500 &middot; AI Lab Guided Activity</div>
+    <h3>Reasoning Through Real-World ML Data Problems in Live Dialogue</h3>
+    <p class="intro">A recorded, real-time conversation with an AI coach working through three progressively harder data challenges in machine learning: handling missing data, correcting severe class imbalance, and identifying and mitigating algorithmic bias in a loan approval model.</p>
+
+    <div class="field">
+      <span class="label">Description</span>
+      <p>Rather than describing these challenges in the abstract, I worked through three concrete scenarios in a live back-and-forth with an AI coach, proposing my own approach to each before receiving feedback, then pushing further with clarifying and follow-up questions instead of accepting the first answer at face value. The conversation moved from missing-data strategy, through class-imbalance techniques and evaluation metrics, into the more ambiguous territory of algorithmic fairness and proxy discrimination.</p>
+    </div>
+
+    <div class="field">
+      <span class="label">Objective</span>
+      <p>I wanted to test whether I could reason through realistic, messy data problems the way I would on the job, not just recall the name of a technique. Each scenario intentionally had more than one defensible answer, so the goal was to weigh tradeoffs out loud and justify a specific choice, rather than pattern-match to a textbook response.</p>
+    </div>
+
+    <div class="field">
+      <span class="label">Process</span>
+      <ol>
+        <li><strong>Scenario 1, missing data:</strong> given a churn dataset with 30% missing values across two fields, I separated the columns by likely cause of missingness rather than applying one blanket fix, median-imputing a field I judged to be randomly missing, and adding a missing-value flag for a field where absence itself looked like a churn signal.</li>
+        <li><strong>Scenario 2, class imbalance:</strong> given a fraud dataset where a naive model hit 99.5% accuracy by never predicting fraud, I explained why accuracy fails here, compared class weighting against SMOTE oversampling, and identified precision, recall, F1, and precision-recall AUC as the metrics that actually matter for this problem.</li>
+        <li><strong>Scenario 3, algorithmic fairness:</strong> given a loan approval model where zip code was acting as a proxy for race, I asked a clarifying question about which fairness definition to target before answering, since demographic parity and equalized odds can conflict, then reasoned through why removing the proxy column alone is insufficient and proposed checking for proxies more broadly and applying a fairness-aware technique like adversarial debiasing.</li>
+        <li><strong>Throughout:</strong> I asked a follow-up or clarifying question in every scenario rather than treating the AI's first response as final, closing the activity by tying all three scenarios back to one underlying principle, understand why the data looks the way it does before choosing how to fix it.</li>
+      </ol>
+    </div>
+
+    <div class="field">
+      <span class="label">Tools and Technologies Used</span>
+      <div class="tools-row">
+        <span class="tag">SchoolAI (AI coaching platform)</span><span class="tag">Missing Data Strategy</span>
+        <span class="tag">SMOTE &amp; Class Weighting</span><span class="tag">Precision / Recall / F1 / PR-AUC</span>
+        <span class="tag">Algorithmic Fairness &amp; Proxy Discrimination</span><span class="tag">Equalized Odds</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="label">Value Proposition</span>
+      <div class="vp-inline">For hiring managers evaluating applied ML judgment: this artifact shows I can reason through ambiguous, real-world data problems under uncertainty, including the ethical and regulatory dimensions of model fairness, not just recite the correct terminology.</div>
+    </div>
+
+    <div class="field">
+      <span class="label">Unique Value</span>
+      <p>Unlike Artifact 3, which builds conceptual mastery of how models learn, this artifact demonstrates applied decision-making across a full data pipeline, from raw data quality problems through model evaluation to the fairness and compliance concerns that come with deploying a model on real people. The clarifying questions I asked before answering, especially in the fairness scenario, are a deliberate habit: confirming the actual goal before committing to a technical approach.</p>
+    </div>
+
+    <div class="field">
+      <span class="label">Relevance</span>
+      <p>Data quality issues, class imbalance, and biased proxy features show up constantly in production ML systems, not just in coursework. This artifact demonstrates that I can identify these problems, weigh multiple valid fixes against their tradeoffs, and factor in fairness and regulatory considerations, skills that apply directly to the GenAI and applied ML engineering roles I'm targeting.</p>
+    </div>
+
+    <div class="field">
+      <span class="label">References</span>
+      <p>Built for AIML-500: Machine Learning Fundamentals, AI Lab Guided Activity, Indiana Wesleyan University. Full conversation log available on request or via course records.</p>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-head">
     <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
